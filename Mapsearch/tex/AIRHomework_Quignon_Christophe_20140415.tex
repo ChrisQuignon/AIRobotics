@@ -1,0 +1,164 @@
+\documentclass{scrreprt}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[toc,page]{appendix}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+
+\usepackage{listings}
+%\usepackage{fontspec}
+\DeclareFontShape{OT1}{cmtt}{bx}{n}{<5><6><7><8><9><10><10.95><12><14.4><17.28><20.74><24.88>cmttb10}{}
+
+\author{Christophe Quignon}
+\date{15. Apr. 2014}
+\title{Artificial Intelligence for Robots}
+\begin{document}
+\maketitle
+\section*{DFS and unified search.}
+The implementation is given in the appendix.\
+The program is called with 3 arguments: the Path to the map, the algorithm (``uni'', ``dfs'' or ``bfs``) and the weighting, either ``uni'' or ``left''.\
+
+\section*{Depth First Search}
+\begin{tabular}{ r | c c c }
+  Map 			& 1 			& 2 			& 3\\
+  Average path length 	& 472 			& 477 			& 1099\\
+  Time Elapsed 		& 0.667771816254ms 	& 1.23843812943ms 	& 7.02043509483ms  \\
+\end{tabular}
+
+\section*{Unified Search}
+\begin{tabular}{ r | c c c }
+  Map 			& 1 			& 2 			& 3\\
+  Average path length 	& 880 			& 542 			& 1068\\
+  Time Elapsed 		& 1.93780899048ms 	& 2.73845481873ms 	& 8.65459012985ms \\
+\end{tabular}
+
+\section*{Breadth First Search}
+\begin{tabular}{ r | c c c }
+  Map 			& 1 			& 2 			& 3\\
+  Average path length 	& 493 			& 191 			& 387\\
+  Time Elapsed 		& 0.741991043091ms 	& 0.523473978043ms 	& 0.536557912827ms \\
+\end{tabular}
+
+\section*{Outcome}
+As one can see, the time performance of the unified search is worse because it has to sort the fringe. BFS is slightly better than DFS because of the map layouts.\\
+The differences in path length are most likely due to the map layout and the given restrictions (movement to the left is more expensive) are ineffective for the given maps.\\
+
+\newpage
+\begin{appendices} 
+\chapter{Usage}
+%\includepdf[pages=-]{../ResourcesLiteratureSearch.pdf}\label{App:AppendixA}
+Example call: \texttt{python search.py maps/map2.txt uni left}.\\
+Example output:\\
+
+\begin{lstlisting}[language=Python]
+OK, lets open maps/map3.txt
+ 
+21 goals found: [36, 11], [56, 13], [56, 13], [36, 11], [21, 11], [30, 15], [21, 11], [4, 2], [4, 2], [29, 7], [29, 7], [52, 3], [52, 3], [82, 18], [82, 18], [136, 18], [136, 18], [114, 7], [114, 7], [101, 12], [137, 1], 
+Average Path length: 1068
+Time elapsed: 8.65459012985ms
+\end{lstlisting}
+\section{search.py}
+\begin{lstlisting}[language=Python]
+import sys
+import glob
+import time
+
+#example call: python search.py maps/map1.txt dfs uni
+
+#GLOBALS
+start = 's'
+wall = '|='
+dirt = '*'
+weight_unified = [[0, 1, 0], [1, 0, 1], [0, 1, 0]]
+weight_left = [[0, 1, 0], [2, 0, 1], [0, 1, 0]]
+
+unified = False
+weight = weight_unified
+
+#CONFIG
+print 'OK, lets open ' + sys.argv[1]
+f = open(sys.argv[1])
+map = f.readlines()
+f.close()
+
+#CONFIG
+
+if sys.argv[2] not in ['dfs', 'bfs', 'uni'] :
+  print 'whatever, I take maps/maps1.txt and do a dfs.'
+print ' '
+
+if sys.argv[3] == 'uni':
+  weight = weight_unified
+elif sys.argv[3] == 'left':
+ weight = weight_left
+
+
+#FUNCTIONS
+def is_goal(p):
+  return map[p[1]][p[0]] == dirt
+
+def successors((px, py)):
+  succ = []
+  dy = len(weight)/2
+  dx = len(weight[0])/2
+  for y, row in enumerate(weight):
+    for x, cell in enumerate(row):
+      if cell > 0:
+       	if map[py+y-dy][px+x-dx] == ' ' or map[py+y-dy][px+x-dx] == '*':
+          succ.append([px+x-dx, py+y-dy, cell])
+  return succ 
+
+def start_point():
+  for y, row in enumerate(map):
+    for x, cell in enumerate(row):
+      if cell == start:
+        return [x, y]
+  return [x, y]
+
+def search(found, start):
+  path = []
+  fringe = [start]
+  goals = found
+  while fringe != []:
+    if sys.argv[2] == 'dfs':
+      head = fringe.pop()
+    elif sys.argv[2] == 'bfs':
+      head = fringe.pop(0)
+    else:
+      #Default state
+      head = fringe.pop()
+    if is_goal(head) and head not in zip(*goals)[0]:
+      
+      # We search dirt by dirt, thats why we restart the search
+      goals.append((head, path))
+      return search(goals, head)
+    if head not in fringe and head not in path:
+        fringe = fringe+(successors(head[:2]))
+        #DECIDE ALGORITHM HERE
+        if sys.argv[2] == 'uni':
+         fringe.sort(lambda x, y:cmp(x[2], y[2] ))
+
+    if head not in path:
+      path.append(head)
+  return goals
+
+#MAIN
+timeElapsed=time.time()
+goal = search([[0, [0]]], start_point())
+timeElapsed = time.time()-timeElapsed
+
+goalsFound = len(goal)-1
+goalString = ''
+pathLength = 0
+
+for (g, p) in goal[1:]:
+  goalString = goalString + str(g[:2]) + ', '
+  pathLength = (len(p)/goalsFound)+pathLength
+
+print str(goalsFound) + ' goals found: ' + goalString
+print 'Average path length: ' + str(pathLength)
+print 'Time elapsed: ' + str(timeElapsed) + 'ms '         
+\end{lstlisting}
+\end{appendices}
+
+\end{document}

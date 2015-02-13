@@ -1,0 +1,137 @@
+%\documentclass{beamer}
+%\usetheme{Pittsburgh} 
+\documentclass{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+\usepackage[procnames]{listings}
+\usepackage{graphicx}
+%\usepackage[toc,page]{appendix}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{color}
+
+%Python
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+\lstset{language=Python, 
+    basicstyle=\ttfamily\scriptsize, 
+    keywordstyle=\color{keywords},
+    commentstyle=\color{comments},
+    stringstyle=\color{red},
+    identifierstyle=\color{green},
+    procnamekeys={def,class},
+    breaklines=true,
+    columns=fullflexible,
+    %Numbering and Tabs
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false}
+
+
+\begin{document}
+
+\title{Artificial Intelligence for Robots}
+\subtitle{Homework 4}
+\author{
+  Quignon, Christophe \\
+  %Familyname, Name
+} 
+%\institute{Hochschule Bonn Rhein Sieg}
+\date{\today}
+
+\maketitle{}
+\section{Tasks}
+\begin{enumerate}
+  \item Implement an appropriate solver for the given constraint satisfaction problem, e.g. depth-first-search with backtracking.
+  \item Implement the following three ordering strategies for the successor functions:
+  \begin{itemize}
+    \item Line number in the list
+    \item Euclidean distance
+    \item Time to deadline
+  \end{itemize}
+  \item Evaluate the performance of the algorithm and the different ordering strategies, e.g. like numbers
+of evaluations and path length for each of the given scenarios. An evaluation is performed any
+time the constraints associated with a partial path are checked for satisfaction.
+\end{enumerate}
+\newpage
+\section{Evaluation}
+
+The sorting has a big impact on the performance. But no given sorting is always better than the others.
+
+
+\subsection{File: scenarios/scenario1.txt}\begin{tabular}{ l | l l} \\Sorting &Time & Evaluations\\\hline
+\\ Line number &
+0.00534582138062 ms
+& 157
+\\ Distance &
+0.00103807449341 ms
+& 24
+\\ Deadline &
+0.000430822372437 ms
+& 6
+
+\end{tabular} \subsection{File: scenarios/scenario2.txt}\begin{tabular}{ l | l l} \\Sorting &Time & Evaluations\\\hline
+\\ Line number &
+0.00589418411255 ms
+& 82
+\\ Distance &
+0.0968480110168 ms
+& 2358
+\\ Deadline &
+0.0720450878143 ms
+& 1962
+
+\end{tabular} \subsection{File: scenarios/scenario3.txt}\begin{tabular}{ l | l l} \\Sorting &Time & Evaluations\\\hline
+\\ Line number &
+0.00799703598022 ms
+& 265
+\\ Distance &
+0.0237109661102 ms
+& 816
+\\ Deadline &
+0.00121307373047 ms
+& 23
+
+\end{tabular} \subsection{File: scenarios/scenario4.txt}\begin{tabular}{ l | l l} \\Sorting &Time & Evaluations\\\hline
+\\ Line number &
+8.5898399353 ms
+& 325655
+\\ Distance &
+8.71894693375 ms
+& 325655
+\\ Deadline &
+8.47428703308 ms
+& 325655
+
+\end{tabular} \subsection{File: scenarios/scenario5.txt}\begin{tabular}{ l | l l} \\Sorting &Time & Evaluations\\\hline
+\\ Line number &
+0.00313687324524 ms
+& 25
+\\ Distance &
+0.00267004966736 ms
+& 15
+\\ Deadline &
+0.320579051971 ms
+& 5518
+\end{tabular} \\
+
+\newpage
+\section{Code}
+dfsbacktracking.py
+\lstinputlisting[language=Python]{dfsbacktracking.py}
+
+\newpage
+\section{Output}
+File 4 has no solution and loops forever. Therefore it is not in the output.
+The sorting order is:
+  \begin{itemize}
+    \item Line number in the list
+    \item Euclidean distance
+    \item Time to deadline
+  \end{itemize}
+\lstinputlisting{out.out}
+
+\end{document}

@@ -1,0 +1,44 @@
+
+File: scenarios/scenario1.txt
+---next sorting---
+Time taken: 0.00534582138062 ms
+Evaluations:  157
+---next sorting---
+Time taken: 0.00103807449341 ms
+Evaluations:  24
+---next sorting---
+Time taken: 0.000430822372437 ms
+Evaluations:  6
+
+File: scenarios/scenario2.txt
+---next sorting---
+Time taken: 0.00589418411255 ms
+Evaluations:  82
+---next sorting---
+Time taken: 0.0968480110168 ms
+Evaluations:  2358
+---next sorting---
+Time taken: 0.0720450878143 ms
+Evaluations:  1962
+
+File: scenarios/scenario3.txt
+---next sorting---
+Time taken: 0.00799703598022 ms
+Evaluations:  265
+---next sorting---
+Time taken: 0.0237109661102 ms
+Evaluations:  816
+---next sorting---
+Time taken: 0.00121307373047 ms
+Evaluations:  23
+
+File: scenarios/scenario5.txt
+---next sorting---
+Time taken: 0.00313687324524 ms
+Evaluations:  25
+---next sorting---
+Time taken: 0.00267004966736 ms
+Evaluations:  15
+---next sorting---
+Time taken: 0.320579051971 ms
+Evaluations:  5518

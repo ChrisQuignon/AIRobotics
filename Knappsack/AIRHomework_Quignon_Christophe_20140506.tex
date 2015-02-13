@@ -1,0 +1,60 @@
+%\documentclass{beamer}
+%\usetheme{Pittsburgh} 
+\documentclass{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+\usepackage[procnames]{listings}
+\usepackage{graphicx}
+%\usepackage[toc,page]{appendix}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{color}
+
+%Python
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+\lstset{language=Python, 
+    basicstyle=\ttfamily\scriptsize, 
+    keywordstyle=\color{keywords},
+    commentstyle=\color{comments},
+    stringstyle=\color{red},
+    identifierstyle=\color{green},
+    procnamekeys={def,class},
+    breaklines=true,
+    columns=fullflexible,
+    %Numbering and Tabs
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false}
+
+
+\begin{document}
+
+\title{Artificial Intelligence for Robots}
+\subtitle{Homework 4}
+\author{
+  Quignon, Christophe \\
+  %Familyname, Name
+} 
+%\institute{Hochschule Bonn Rhein Sieg}
+\date{\today}
+
+\maketitle{}
+\section{Task}Your task is to implement a solver of the knapsack problem on the provided data, by using a Local
+Search Algorithm, such as Hill Climbing or Simulated Annealing. Your program should output which
+objects will put in the knapsack, what is the total weight of the objects, and what is the total profit.
+\\
+Hillclimbing was choosen.
+\newpage
+\section{Code}
+\lstinputlisting[language=Python]{knappsack.py}
+
+\newpage
+\section{Output}
+Please note that the algorithm is based on random decisions. Therefore the output will vary.
+\lstinputlisting[language=C++]{knappsack.out}
+
+\end{document}

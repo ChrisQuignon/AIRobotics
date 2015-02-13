@@ -1,0 +1,74 @@
+% library(swi_hooks) compiled into pce_swi_hooks 0.00 sec, 3,856 bytes
+Welcome to SWI-Prolog (Multi-threaded, 64 bits, Version 5.10.4)
+Copyright (c) 1990-2011 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- consult('family.pl').
+Warning: /home/quignon/SS14/AIR/Homework9/family.pl:21:
+	Clauses of married/2 are not together in the source-file
+Warning: /home/quignon/SS14/AIR/Homework9/family.pl:22:
+	Clauses of offspring/3 are not together in the source-file
+Warning: /home/quignon/SS14/AIR/Homework9/family.pl:26:
+	Clauses of married/2 are not together in the source-file
+Warning: /home/quignon/SS14/AIR/Homework9/family.pl:27:
+	Clauses of offspring/3 are not together in the source-file
+Warning: /home/quignon/SS14/AIR/Homework9/family.pl:33:
+	Clauses of parent/2 are not together in the source-file
+Warning: /home/quignon/SS14/AIR/Homework9/family.pl:36:
+	Clauses of married/2 are not together in the source-file
+Warning: /home/quignon/SS14/AIR/Homework9/family.pl:38:
+	Clauses of parent/2 are not together in the source-file
+% family.pl compiled 0.00 sec, 13,000 bytes
+true.
+
+?- child(_, homer).
+true .
+
+?- child(ling, X).
+false.
+
+?- greatGrandParent(X, zia).
+X = abraham ;
+X = mona ;
+X = clancy ;
+X = jacqueline ;
+false.
+
+?- brother(homer, herb).
+true .
+
+?- brother(herb, homer).
+true .
+
+?- sister(lisa, _).
+true .
+
+?- daughter(ling, marge).
+false.
+
+?- son(herb, mona).
+false.
+
+?- son(herb, abraham).
+true .
+
+?- aunt(selma, X).
+X = bart ;
+X = bart ;
+X = lisa ;
+X = lisa ;
+X = maggie ;
+X = maggie ;
+false.
+
+?- uncle(X, zia).
+X = bart ;
+X = bart ;
+false.
+
+?- halt.
+

@@ -1,0 +1,71 @@
+%\documentclass{beamer}
+%\usetheme{Pittsburgh} 
+\documentclass{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+\usepackage[procnames]{listings}
+\usepackage{graphicx}
+%\usepackage[toc,page]{appendix}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{color}
+
+%Python
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+\lstset{language=Python, 
+    basicstyle=\ttfamily\scriptsize, 
+    keywordstyle=\color{keywords},
+    commentstyle=\color{comments},
+    stringstyle=\color{red},
+    identifierstyle=\color{green},
+    procnamekeys={def,class},
+    breaklines=true,
+    columns=fullflexible,
+    %Numbering and Tabs
+    numbers=left,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false}
+
+
+\begin{document}
+
+\title{Artificial Intelligence for Robots}
+\subtitle{Homework 6}
+\author{
+  Quignon, Christophe \\
+  %Familyname, Name
+} 
+%\institute{Hochschule Bonn Rhein Sieg}
+\date{\today}
+
+\maketitle{}
+\section{Tasks}
+\subsection{Implement a simple SOS game to demonstrate the use of adversarial search for deterministic, fully observable, two player turn-taking games.
+}
+See "Code"
+
+\subsection{Compare these two approaches based on their search time, space requirement and other information that you think is important. How to do choose the next best move, what is your evaluation function?}
+Only one algorithm was implemented, therefore no comparison is possible.\\
+The best move is choosen is the return value of the minimax\_decision function in sos.py line 46.\\
+My evaluation function is the minimax\_value function in sos.py line 49. It uses the val() function in board.py line 67.
+
+
+\newpage
+\section{Code}
+\subsection{ground.py}
+\lstinputlisting[language=Python]{ground.py}
+\newpage
+\subsection{sos.py}
+\lstinputlisting[language=Python]{sos.py}
+
+\newpage
+\section{Output}
+
+\lstinputlisting[language=TeX, numbers=none]{out.out}
+
+\end{document}

@@ -1,0 +1,187 @@
+%\documentclass{beamer}
+%\usetheme{Pittsburgh} 
+\documentclass{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+\usepackage[procnames]{listings}
+\usepackage{graphicx}
+%\usepackage[toc,page]{appendix}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{enumitem} 
+
+%Python
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{0,0,113}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,150,0}
+\lstset{language=Python, 
+    basicstyle=\ttfamily\scriptsize, 
+    keywordstyle=\color{keywords},
+    commentstyle=\color{comments},
+    stringstyle=\color{red},
+    identifierstyle=\color{green},
+    procnamekeys={def,class},
+    breaklines=true,
+    columns=fullflexible,
+}
+
+
+\begin{document}
+
+\title{Artificial Intelligence for Robots}
+\subtitle{Homework 9}
+\author{
+  Quignon, Christophe \\
+  %Familyname, Name
+} 
+%\institute{Hochschule Bonn Rhein Sieg}
+\date{\today}
+
+\maketitle{}
+%\section{Tasks}
+\section{AIMA 8.6 Represent the following sentences in first-order logic, using a consistent vocabulary (which you must define):}
+
+\subsection{Vocabulary}
+French\\
+Greek\\
+Spring 2001\\
+Policy\\
+UK\\
+Barber(person)\\
+Student(person)\\
+Politician(person)\\
+Fools(person, person, time)\\
+Takes (student, course, semester)\\
+MaxScore(course, semester)\\
+Smart(person)\\
+Buys(person, thing)\\
+SellsTo(person, thing, person)\\
+Expensive(thing)\\
+Insured(person)\\
+Shaves(barber, person)\\
+Parents(person, person, child)\\
+CitizenOf(person, country)\\
+BornIn(person, country)\\
+ParentsOf(parent, parent, child)\\
+\subsection{Sentences}
+\begin{enumerate}[label={\alph*)}] 
+	\item Some students took French in spring 2001.\\
+	$\exists s\quad  Takes(s, French, Spring2001)$
+	\item Every student who takes French passes it.\\
+	$\forall s \exists t \quad Takes(s, French, t)$
+	\item Only one student took Greek in spring 2001.\\
+	$\forall s \exists s1 \quad Takes(s1, Greek, Spring2001) \land \neg(Takes(s, Greek, Spring2001)$
+	\item The best score (in the same semester) in Greek is always higher than the best score in French.\\
+	$\forall s \quad MaxScore(Greek, s) > MaxScore(French, s) $
+	\item Every person who buys a policy is smart.\\
+	$\forall p \quad Buys(p, Policy) \to Smart(p)$
+	\item No person buys an expensive policy.\\
+	$\forall p \quad \neg(Buys(p, Policy) \land Expensive(Policy))$
+	\item There is an agent who sells policies only to people who are not insured.\\
+	$\exists p \quad sells(Agent, Policy, p) \land \neg(Insured(p))$
+	\item There is a barber who shaves all men in town who do not shave themselves.\\
+	$\exists b \forall m \quad Barber(b)\land Shaves(b, m) \land \neg(Shaves(b, b)$
+	
+	\item A person born in the UK, each of whose parents is a UK citizen or a UK resident, is a UK citizen by birth.\\
+	$\exists c \forall f, m \quad BornIn(c, UK) \land CitizenOf(f, UK) \land CitizenOf(m, UK) \land ParentsOf(f, m, c) \to CitizenOf(c, UK)$
+	
+	\item A person born outside the UK, one of whose parents is a UK citizen by birth, is a UK citizen by descent.\\
+	$\forall c \exists p, q \quad ParentsOf(p, q, c) \land \neg BornIn(c, UK) \land CitizenOf(p, UK) \to CitizenOf(c, UK)$
+	
+	\item Politicians can fool some of the people all of the time, and they can fool all of the people some of the time, but they can’t fool all of the people all of the time.\\
+	$\forall p \quad Politician(p)
+	\to (\exists q \forall t \quad Fools(p, q, t)\land \forall t \quad Fools(p, q, t))\land\neg(\forall q, t Fools(p, q, t))$
+	
+\end{enumerate}
+
+
+\section{Rewrite the propositional wumpus world facts (from Section 7.5 of the Book) into first-order logic. How much more compact is this version?}
+Only the world is described, not the actions of the agent.
+\subsection{Vocabulary}
+Wumpus\\
+Gold\\
+Pit\\
+Agent\\
+Arrow\\
+Shiny(x, y)\\
+Breezy(x, y)\\
+Smelly(x, y)\\
+Shoot(x, y)\\
+NextTo(x1, y1, x2, y2)\\
+%MoveTo(x, y)\\
+IsAt(thing, x, y)\\
+HasArrow(agent)
+Won(x)\\
+Dead(x)\\
+\subsection{Sentences}
+
+Fields next to Pits are breezy:\\
+$\forall x, y, x1, y1 \quad NextTo(x, y, x1, y1) \land IsAt(Pit, x, y) \to  \land Breezy(x1, y1)$\\
+
+Fields next to the Wumpus are smelly:\\
+$\forall x, y, x1, y1 \quad NextTo(x, y, x1, y1) \land IsAt(Wumpus, x, y) \to  \land Smelly(x1, y1)$\\
+
+The field of the Gold is shiny:\\
+$\forall x, y \quad IsAt(Gold, x, y) \iff  Shiny(x1, y1)$\\
+
+The Agent may shoot to adjacent Fields and loose the Arrow:\\
+$\forall x, y, x1, y1 \quad NextTo(x, y, x1, y1) \land IsAt(Agent, x, y) \land HasArrow(Agent) \to  Shoot(x1, y1) \land \neg(HasArrow(Agent)$\\
+
+The Agent may move to adjacent Fields:\\
+$\forall x, y, x1, y1 \quad NextTo(x, y, x1, y1) \land IsAt(Agent, x, y)  \to  \neg IsAt(Agent, x, y) \land IsAt(Agent, x1, y1)$\\
+
+If the Wumpus is shot, it is dead:\\
+$\exists x, y \quad Shoot(x, y) \land IsAt(Wumpus, x, y) \to Dead(Wumpus)$\\
+
+If the Agent meets the Wumpus, the Agent dies:\\
+$\exists x, y \quad IsAt(Agent, x, y) \land IsAt(Wumpus, x, y) \to Dead(Agent)$\\
+
+If the Agent is where the Gold is, it wins:\\
+$\exists x, y \quad IsAt(Agent, x, y) \land IsAt(Gold, x, y) \to Won(Agent)$\\
+
+If the Agent is where a Pit is, it dies:\\
+$\exists x, y \quad IsAt(Agent, x, y) \land IsAt(Pit, x, y) \to Dead(Agent)$\\
+
+If the Agent is dead, it looses:\\
+$Dead(Agent) \to \neg Won(Agent)$\\
+
+
+\section{PROLOG is a programming language commonly used for logic. It uses first-order
+logic. Learn some basic PROLOG 1 and write axioms describing the following relationships:}
+
+Child, Grandchild, GreatGrandparent, Brother, Sister, Daughter, Son, Aunt, Uncle
+
+Fill your KnowledgeBase with reasonable information and ask questions in order to check the correctness of your relations.
+
+\subsection{Family tree}
+I choose the Family Tree of the Simpsons. To model the GreatGrandChild realtion, I had to include the look into the future where Lisa marries milhouse and they get a child, zia. The family tree is depicted in Figure 1. Please notice, that Ling is adopted and we only know Selma as her Mother. Also, Clancy and Jacqueline are no longer married.
+
+%\begin{figure}
+% \center
+% \includegraphics[width=11cm]{simpsons.jpg}
+% \caption{Family tree of the Simpsons.}
+%\end{figure}
+
+%REMOVED FOR LEGAL REASONS
+
+\subsection{KnowledgeBase}
+\lstinputlisting{family.pl}
+
+
+\subsection{Questions}
+\lstinputlisting{out.out}
+
+\section{Time estimate}
+\begin{itemize}
+	\item AIMA 8.6\\
+	2h
+	\item AIMA 8.10\\
+	2h 
+\end{itemize}
+
+	
+
+\end{document}

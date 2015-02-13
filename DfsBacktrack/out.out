@@ -1,0 +1,178 @@
+
+File: scenarios/scenario1.txt
+---next sorting---
+Time taken: 0.00427293777466 ms
+Evaluations:  157
+X: 24.0451 Y: 1.63808 Deadline: 0.0 Reached at: 0.0
+X: 27.8529 Y: 4.70066 Deadline: 66.5376 Reached at: 4.88658746943
+X: 2.27709 Y: 15.517 Deadline: 77.6843 Reached at: 32.6555497862
+X: 6.36816 Y: 19.3715 Deadline: 43.7957 Reached at: 38.2764059483
+X: 20.9536 Y: 25.5436 Deadline: 60.1556 Reached at: 54.114015566
+X: 28.6092 Y: 20.4382 Deadline: 77.3159 Reached at: 63.3158262857
+---next sorting---
+Time taken: 0.000910043716431 ms
+Evaluations:  24
+X: 24.0451 Y: 1.63808 Deadline: 0.0 Reached at: 0.0
+X: 28.571 Y: 1.91245 Deadline: 41.5744 Reached at: 4.53420882921
+X: 6.36816 Y: 19.3715 Deadline: 43.7957 Reached at: 32.7792885949
+X: 2.27709 Y: 15.517 Deadline: 77.6843 Reached at: 38.400144757
+X: 20.9536 Y: 25.5436 Deadline: 60.1556 Reached at: 59.5978977827
+X: 28.6092 Y: 20.4382 Deadline: 77.3159 Reached at: 68.7997085023
+---next sorting---
+Time taken: 0.000428915023804 ms
+Evaluations:  6
+X: 24.0451 Y: 1.63808 Deadline: 0.0 Reached at: 0.0
+X: 28.571 Y: 1.91245 Deadline: 41.5744 Reached at: 4.53420882921
+X: 27.8529 Y: 4.70066 Deadline: 66.5376 Reached at: 7.41340708812
+X: 28.6092 Y: 20.4382 Deadline: 77.3159 Reached at: 23.1691093873
+X: 20.9536 Y: 25.5436 Deadline: 60.1556 Reached at: 32.370920107
+X: 2.27709 Y: 15.517 Deadline: 77.6843 Reached at: 53.5686731327
+
+File: scenarios/scenario2.txt
+---next sorting---
+Time taken: 0.00389790534973 ms
+Evaluations:  82
+X: 29.5207 Y: 9.89756 Deadline: 0.0 Reached at: 0.0
+X: 4.19168 Y: 13.334 Deadline: 67.7816 Reached at: 25.5610714571
+X: 4.38027 Y: 6.96372 Deadline: 57.2406 Reached at: 31.9341424175
+X: 5.80756 Y: 5.06242 Deadline: 98.3581 Reached at: 34.3115566503
+X: 8.07072 Y: 23.9943 Deadline: 66.6227 Reached at: 53.37822845
+X: 13.9596 Y: 23.8898 Deadline: 102.084 Reached at: 59.2680355695
+X: 20.0697 Y: 28.636 Deadline: 72.7552 Reached at: 67.004942991
+X: 16.5886 Y: 17.9471 Deadline: 83.9141 Reached at: 78.2464126645
+X: 11.7894 Y: 17.2711 Deadline: 114.761 Reached at: 83.0929884289
+X: 21.6165 Y: 6.49102 Deadline: 107.13 Reached at: 97.6800381381
+---next sorting---
+Time taken: 0.0723731517792 ms
+Evaluations:  2358
+X: 29.5207 Y: 9.89756 Deadline: 0.0 Reached at: 0.0
+X: 4.38027 Y: 6.96372 Deadline: 57.2406 Reached at: 25.3110378636
+X: 4.19168 Y: 13.334 Deadline: 67.7816 Reached at: 31.684108824
+X: 8.07072 Y: 23.9943 Deadline: 66.6227 Reached at: 43.0282239244
+X: 20.0697 Y: 28.636 Deadline: 72.7552 Reached at: 55.8937165279
+X: 13.9596 Y: 23.8898 Deadline: 102.084 Reached at: 63.6306239495
+X: 16.5886 Y: 17.9471 Deadline: 83.9141 Reached at: 70.12887943
+X: 11.7894 Y: 17.2711 Deadline: 114.761 Reached at: 74.9754551944
+X: 5.80756 Y: 5.06242 Deadline: 98.3581 Reached at: 88.5708322442
+X: 21.6165 Y: 6.49102 Deadline: 107.13 Reached at: 104.444189856
+---next sorting---
+Time taken: 0.0723400115967 ms
+Evaluations:  1962
+X: 29.5207 Y: 9.89756 Deadline: 0.0 Reached at: 0.0
+X: 21.6165 Y: 6.49102 Deadline: 107.13 Reached at: 8.60702575874
+X: 22.7649 Y: 0.0164105 Deadline: 68.514 Reached at: 15.182692321
+X: 11.7894 Y: 17.2711 Deadline: 114.761 Reached at: 35.6322866933
+X: 4.38027 Y: 6.96372 Deadline: 57.2406 Reached at: 48.3262730577
+X: 4.19168 Y: 13.334 Deadline: 67.7816 Reached at: 54.6993440181
+X: 8.07072 Y: 23.9943 Deadline: 66.6227 Reached at: 66.0434591186
+X: 13.9596 Y: 23.8898 Deadline: 102.084 Reached at: 71.933266238
+X: 16.5886 Y: 17.9471 Deadline: 83.9141 Reached at: 78.4315217185
+X: 5.80756 Y: 5.06242 Deadline: 98.3581 Reached at: 95.2316944017
+
+File: scenarios/scenario3.txt
+---next sorting---
+Time taken: 0.0080418586731 ms
+Evaluations:  265
+X: 10.4201 Y: 18.8932 Deadline: 0.0 Reached at: 0.0
+X: 5.85405 Y: 4.92826 Deadline: 47.698 Reached at: 14.6924593519
+X: 14.2294 Y: 23.845 Deadline: 43.128 Reached at: 35.3803674107
+X: 8.01741 Y: 28.0938 Deadline: 43.8231 Reached at: 42.9063969881
+X: 8.70517 Y: 24.1108 Deadline: 64.1837 Reached at: 46.9483399389
+X: 17.8354 Y: 7.52282 Deadline: 85.9098 Reached at: 65.8830218832
+X: 17.8435 Y: 6.04921 Deadline: 86.6588 Reached at: 67.3566541447
+X: 29.7767 Y: 12.8305 Deadline: 95.5394 Reached at: 81.0820742222
+---next sorting---
+Time taken: 0.0238041877747 ms
+Evaluations:  816
+X: 10.4201 Y: 18.8932 Deadline: 0.0 Reached at: 0.0
+X: 14.2294 Y: 23.845 Deadline: 43.128 Reached at: 6.24748667306
+X: 15.7349 Y: 3.29454 Deadline: 43.093 Reached at: 26.8530183687
+X: 5.85405 Y: 4.92826 Deadline: 47.698 Reached at: 36.8680190058
+X: 8.70517 Y: 24.1108 Deadline: 64.1837 Reached at: 56.2612839735
+X: 17.8354 Y: 7.52282 Deadline: 85.9098 Reached at: 75.1959659178
+X: 17.8435 Y: 6.04921 Deadline: 86.6588 Reached at: 76.6695981793
+X: 29.7767 Y: 12.8305 Deadline: 95.5394 Reached at: 90.3950182568
+---next sorting---
+Time taken: 0.00124287605286 ms
+Evaluations:  23
+X: 10.4201 Y: 18.8932 Deadline: 0.0 Reached at: 0.0
+X: 8.70517 Y: 24.1108 Deadline: 64.1837 Reached at: 5.49220672088
+X: 14.2294 Y: 23.845 Deadline: 43.128 Reached at: 11.022827548
+X: 8.01741 Y: 28.0938 Deadline: 43.8231 Reached at: 18.5488571254
+X: 5.85405 Y: 4.92826 Deadline: 47.698 Reached at: 41.8151926766
+X: 17.8354 Y: 7.52282 Deadline: 85.9098 Reached at: 54.0742501206
+X: 17.8435 Y: 6.04921 Deadline: 86.6588 Reached at: 55.5478823821
+X: 29.7767 Y: 12.8305 Deadline: 95.5394 Reached at: 69.2733024596
+
+File: scenarios/scenario4.txt
+---next sorting---
+Time taken: 9.18455696106 ms
+Evaluations:  325655
+no solution
+---next sorting---
+Time taken: 8.76585102081 ms
+Evaluations:  325655
+no solution
+---next sorting---
+Time taken: 8.51599097252 ms
+Evaluations:  325655
+no solution
+
+File: scenarios/scenario5.txt
+---next sorting---
+Time taken: 0.00306582450867 ms
+Evaluations:  25
+X: 20.3854 Y: 8.82616 Deadline: 0.0 Reached at: 0.0
+X: 2.86228 Y: 29.3282 Deadline: 235.622 Reached at: 26.970231343
+X: 3.00153 Y: 8.10862 Deadline: 85.2797 Reached at: 48.1902682407
+X: 4.67634 Y: 23.061 Deadline: 177.615 Reached at: 63.2361532662
+X: 5.06203 Y: 22.0675 Deadline: 203.545 Reached at: 64.3018919894
+X: 5.43522 Y: 12.8945 Deadline: 207.046 Reached at: 73.4824801936
+X: 5.93964 Y: 3.65347 Deadline: 162.18 Reached at: 82.7372667929
+X: 7.09325 Y: 6.65767 Deadline: 115.173 Reached at: 85.9553459827
+X: 13.0819 Y: 22.6066 Deadline: 109.741 Reached at: 102.991551457
+X: 14.0566 Y: 24.7271 Deadline: 188.549 Reached at: 105.325338153
+X: 19.6302 Y: 23.2756 Deadline: 174.148 Reached at: 111.084840667
+X: 19.9475 Y: 21.8084 Deadline: 215.313 Reached at: 112.585958627
+X: 20.8516 Y: 2.18291 Deadline: 146.805 Reached at: 132.232262466
+X: 26.994 Y: 2.07531 Deadline: 156.557 Reached at: 138.37560484
+X: 24.5458 Y: 25.5033 Deadline: 169.674 Reached at: 161.931164665
+X: 28.1037 Y: 1.41985 Deadline: 236.618 Reached at: 186.276004289
+---next sorting---
+Time taken: 0.00267601013184 ms
+Evaluations:  15
+X: 20.3854 Y: 8.82616 Deadline: 0.0 Reached at: 0.0
+X: 3.00153 Y: 8.10862 Deadline: 85.2797 Reached at: 17.3986723582
+X: 20.1168 Y: 10.0061 Deadline: 106.024 Reached at: 34.6188029478
+X: 13.0819 Y: 22.6066 Deadline: 109.741 Reached at: 49.0501028983
+X: 7.09325 Y: 6.65767 Deadline: 115.173 Reached at: 66.0863083727
+X: 20.8516 Y: 2.18291 Deadline: 146.805 Reached at: 80.5540542849
+X: 26.994 Y: 2.07531 Deadline: 156.557 Reached at: 86.6973966586
+X: 5.93964 Y: 3.65347 Deadline: 162.18 Reached at: 107.810820445
+X: 24.5458 Y: 25.5033 Deadline: 169.674 Reached at: 136.509326695
+X: 19.6302 Y: 23.2756 Deadline: 174.148 Reached at: 141.90615638
+X: 4.67634 Y: 23.061 Deadline: 177.615 Reached at: 156.861556143
+X: 14.0566 Y: 24.7271 Deadline: 188.549 Reached at: 166.388631606
+X: 5.06203 Y: 22.0675 Deadline: 203.545 Reached at: 175.768171128
+X: 5.43522 Y: 12.8945 Deadline: 207.046 Reached at: 184.948759332
+X: 19.9475 Y: 21.8084 Deadline: 215.313 Reached at: 201.980021294
+X: 2.86228 Y: 29.3282 Deadline: 235.622 Reached at: 220.646893943
+---next sorting---
+Time taken: 0.317414999008 ms
+Evaluations:  5518
+X: 20.3854 Y: 8.82616 Deadline: 0.0 Reached at: 0.0
+X: 20.1168 Y: 10.0061 Deadline: 106.024 Reached at: 1.21012576355
+X: 20.8516 Y: 2.18291 Deadline: 146.805 Reached at: 9.06774835668
+X: 26.994 Y: 2.07531 Deadline: 156.557 Reached at: 15.2110907303
+X: 28.1037 Y: 1.41985 Deadline: 236.618 Reached at: 16.4999126349
+X: 19.9475 Y: 21.8084 Deadline: 215.313 Reached at: 38.4593427172
+X: 7.09325 Y: 6.65767 Deadline: 115.173 Reached at: 58.3283226255
+X: 19.6302 Y: 23.2756 Deadline: 174.148 Reached at: 79.1449196766
+X: 5.43522 Y: 12.8945 Deadline: 207.046 Reached at: 96.7308428656
+X: 13.0819 Y: 22.6066 Deadline: 109.741 Reached at: 109.091935108
+X: 5.93964 Y: 3.65347 Deadline: 162.18 Reached at: 129.34614491
+X: 5.06203 Y: 22.0675 Deadline: 203.545 Reached at: 147.781076431
+X: 4.67634 Y: 23.061 Deadline: 177.615 Reached at: 148.846815154
+X: 14.0566 Y: 24.7271 Deadline: 188.549 Reached at: 158.373890617
+X: 24.5458 Y: 25.5033 Deadline: 169.674 Reached at: 168.891770778
+X: 2.86228 Y: 29.3282 Deadline: 235.622 Reached at: 190.910056351
